@@ -43,8 +43,6 @@ def is_prime(num):
   for i in range(2, int(num ** 0.5) + 1):
         if num % i == 0:
              return False
-   
-   
    return True
 
 
@@ -56,7 +54,7 @@ num = 13
 factorial = 1
 
 if num < 0:
-    print("Factorial doesn't exit for negative numbers")
+    print("Factorial doesn't exist for negative numbers")
 elif num == 0:
     print("Factorial of zero is 1")
 else:
@@ -102,7 +100,8 @@ def reverse_string(s):
         reversed_str = char + reversed_str
     return reversed_str
     
-    
+print(reverse_string("cashback"))
+
 #----------- string format 
 def reverse_string(s):
     reverse = ""
@@ -281,7 +280,7 @@ def print_list(head):
     
 head = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
 print_list(head)
-reversed_head = revers_linked_list(head)
+reversed_head = reverse_linked_list(head)
 print_list(reversed_head)
 
 
@@ -336,7 +335,13 @@ def merge_two_lists(l1, l2):
 l1 = ListNode(1, ListNode(3, ListNode(5)))
 l2 = ListNode(2, ListNode(4, ListNode(6)))
 merged_head = merge_two_lists(l1, l2)
-print(merged_head)
+
+current = merged_head
+while current:
+    print(current.value, end=" -> ")
+    current = current.next
+
+print("None")
 
 
 
@@ -374,6 +379,7 @@ def longest_consecutive_sequence(lst):
         
         
 # remove duplicates manually
+nums = [100, 4, 200, 1, 3, 2] # - [1, 2, 3, 4]
 
 unique_nums = []
 for n in nums:
@@ -439,7 +445,8 @@ print(out)
     
 List comprehension
 
-[x * 2 for x in range(5)]
+val = [x * 2 for x in range(5)]
+print(val)
 
 
 Split the sentence - 
@@ -460,7 +467,7 @@ for ch in input_string:
 if current:
     words.append(current)
 
-print(words)
+print(", ".join("'" + word + "'" for word in words))
 
 
 input_string = "ASDTFHGNKE"
